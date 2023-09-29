@@ -25,10 +25,10 @@ app.use('/api/v1/analytics', require('./routes/analyticsRoutes'));
 app.use('/api/v1/admin', require('./routes/adminRoutes'));
 
 //static files
-app.use(express.static(path.join(__dirname, './client/build')));
+app.use("/", express.static(path.join(__dirname, "Client", "build")));
 
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, './client/build/index.html'));
+app.get("*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
 });
 
 //port
